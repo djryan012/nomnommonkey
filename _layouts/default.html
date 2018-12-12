@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ page.title }}</title>
-    
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-  
-  </head>
+<html lang="en">
 
+{% include footer.html %}
 
-  <body>
-    <nav>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/blog">Blog</a></li>
-</ul>
-    </nav>
-<div class="container">
+<body class="home blog">
+    <div class="page-wrapper">
 
-  {{ content }}
+        {% include header.html %}
 
-</div>
-  
-  <footer>
-   <ul>
-   <li><a href="https://github.com/djryan012/nomnommonkey">github.com/djryan012/nomnommonkey</a></li>
-   </ul>
-  </footer>
-  </body>
+        <section id="slider-wrapper">
+            <div class="container">
 
-</html>
+            </div>
+        </section>
+        <!--#slider-->
+        <div id="main" class="site-main">
+            <div class="container">
+                <div class="row">
+                    <div id="primary" class="col-md-8 right">
+                        <div id="content" class="site-content" role="main">
+
+                            {{ include.content }}
+
+                            <!-- Posts navigation -->
+                        </div><!-- #content -->
+                    </div><!-- #primary -->
+
+                    <div id="secondary" class="widget-area col-md-4" role="complementary">
+                        {% include header.html %}
+                    </div><!-- #secondary -->
+
+                </div>
+            </div>
+        </div><!-- #main -->
+
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            {% include footer.html %}
+        </footer><!-- #colophon -->
+    </div><!-- .page-wrapper -->
+
+</body>
